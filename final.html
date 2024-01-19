@@ -13,6 +13,24 @@
                 <img src="https://media.giphy.com/media/W4uXDK2FCeiEzHiN4W/giphy.gif" alt="Cute animated illustration">
             </div>
             <p class = "text"> now let's cuddle.</p>
+            <div id="like-container">
+                <img src="style/images/heart.png" alt="Like" id="like-button" style="width: 50px; cursor: pointer;" />
+                <span id="like-count">0</span> Likes
+            </div>
         </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const likeButton = document.getElementById('like-button');
+            const likeCountDisplay = document.getElementById('like-count');
+            let likeCount = 0;
+
+            likeButton.addEventListener('click', () => {
+                likeCount++; // Increment the like count
+                likeCountDisplay.textContent = likeCount; // Update the like count display
+                likeButton.style.width = parseInt(likeButton.style.width) + 5 + 'px'; // Make the heart larger
+            });
+        });
+    </script>
     </body>
 </html>
