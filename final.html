@@ -13,30 +13,5 @@
                 <img src="https://media.giphy.com/media/W4uXDK2FCeiEzHiN4W/giphy.gif" alt="Cute animated illustration">
             </div>
             <p class = "text"> now let's cuddle.</p>
-            <div id="like-container">
-                <img src="style/images/heart.png" alt="Like" id="like-button" style="width: 50px; cursor: pointer;" />
-                <span id="like-count">0</span> Likes
-            </div>
-        </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const heartIcon = document.querySelector('.like-button .heart-icon');
-            const likesAmountLabel = document.querySelector('.like-button .likes-amount');
-            let likesAmount = parseInt(likesAmountLabel.innerHTML, 10);
-
-            heartIcon.addEventListener('click', () => {
-                likesAmount++;
-                likesAmountLabel.innerHTML = likesAmount;
-
-                const frameWidth = 100; // Width of each frame in the sprite sheet
-                const totalFrames = 28; // Total number of frames in the sprite sheet
-                const currentFrame = (likesAmount % totalFrames);
-                const backgroundPositionX = -(currentFrame * frameWidth);
-
-                heartIcon.style.backgroundPosition = `${backgroundPositionX}px 0`;
-            });
-        });
-    </script>
     </body>
 </html>
