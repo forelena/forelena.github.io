@@ -21,14 +21,20 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const likeButton = document.getElementById('like-button');
-            const likeCountDisplay = document.getElementById('like-count');
-            let likeCount = 0;
+            const heartIcon = document.querySelector('.like-button .heart-icon');
+            const likesAmountLabel = document.querySelector('.like-button .likes-amount');
+            let likesAmount = parseInt(likesAmountLabel.innerHTML, 10);
 
-            likeButton.addEventListener('click', () => {
-                likeCount++; // Increment the like count
-                likeCountDisplay.textContent = likeCount; // Update the like count display
-                likeButton.style.width = parseInt(likeButton.style.width) + 5 + 'px'; // Make the heart larger
+            heartIcon.addEventListener('click', () => {
+                likesAmount++;
+                likesAmountLabel.innerHTML = likesAmount;
+
+                const frameWidth = 100; // Width of each frame in the sprite sheet
+                const totalFrames = 28; // Total number of frames in the sprite sheet
+                const currentFrame = (likesAmount % totalFrames);
+                const backgroundPositionX = -(currentFrame * frameWidth);
+
+                heartIcon.style.backgroundPosition = `${backgroundPositionX}px 0`;
             });
         });
     </script>
