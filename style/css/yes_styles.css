@@ -73,3 +73,13 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+#like-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#like-count {
+    font-size: 24px;
+    margin-left: 10px;
+}
